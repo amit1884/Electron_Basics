@@ -9,6 +9,7 @@ function createWindow(){
 
     win=new BrowserWindow({show:false});
     win.setMenu(null);
+    win.setIcon('icon.png')
     // win.loadURL(url.format({
     //     pathname:path.join(__dirname,'index.html'),
     //     protocol:'file',
