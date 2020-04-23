@@ -7,13 +7,16 @@ const BrowserWindow=electron.BrowserWindow;
 let win;
 function createWindow(){
 
-    win=new BrowserWindow();
+    win=new BrowserWindow({show:false});
     // win.loadURL(url.format({
     //     pathname:path.join(__dirname,'index.html'),
     //     protocol:'file',
     //     slashes:true
     // }));
-    win.loadURL('http://nitkart.herokuapp.com')
+    win.loadURL('http://nitkart.herokuapp.com');
+    win.once('ready-to-show',()=>{
+        win.show();
+    })
     win.on('closed',()=>{
 
         win=null;
